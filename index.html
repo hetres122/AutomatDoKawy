@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,36 +8,35 @@
 </head>
 
 <body>
-    <script>
+    <script src="./script/script.js"></script>
+    <!-- <script>
         class Automat {
-            constructor(cena, pieniadze){
-                this.cena=cena;
-                this.pieniadze=pieniadze; 
+            constructor(cena, pieniadze) {
+                this.cena = cena;
+                this.pieniadze = pieniadze;
             }
-            
-             reszta = {
-               half: {
-                 value: 0.5,
-                 quantity: 100
-               },
-               one: {
-                  value: 1,
-                 quantity: 100
-               },
-               two: {
-                  value: 2,
-                 quantity: 100
-               },
-               five: {
-                  value: 5,
-                 quantity: 100
-               },
-            // coins: [0.5, 1, 2, 5],
-            // cash: [100, 100, 100, 100] 
-        }
-               wydawanie() {
-                   this.pieniadze -=this.cena;
-             while (this.pieniadze !== 0) {
+            reszta = {
+                half: {
+                    value: 0.5,
+                    quantity: 100
+                },
+                one: {
+                    value: 1,
+                    quantity: 100
+                },
+                two: {
+                    value: 2,
+                    quantity: 100
+                },
+                five: {
+                    value: 5,
+                    quantity: 100
+                },
+            }
+
+            wydawanie() {
+                this.pieniadze -= this.cena;
+                while (this.pieniadze !== 0) {
                     if (this.pieniadze >= this.reszta.five.value) {
                         this.pieniadze -= this.reszta.five.value;
                         this.reszta.five.quantity--;
@@ -63,20 +61,15 @@
                     }
 
                 }
-                
-               }
 
-             }
+            }
 
-           
-       
-      const automat = new Automat(5,10);
-      automat.wydawanie();
-      
+        }
 
-      
-     
-    </script>
+        const automat = new Automat(5, 10);
+        automat.wydawanie();
+
+    </script> -->
 
 </body>
 
