@@ -63,28 +63,28 @@ const baton4 =  document.querySelector('.b4');
 baton1.addEventListener('click', (event)=>{
 console.log(event.target.value);
 this.reszta.half.quantity++;
-this.suma +=0.5;
+this.suma +=this.reszta.half.value;
 console.log(this.suma);
 });
 
 baton2.addEventListener('click', (event)=>{
 console.log(event.target.value);
 this.reszta.one.quantity++;
-this.suma +=1;
+this.suma +=this.reszta.one.value;
 console.log(this.suma);
 });
 
 baton3.addEventListener('click', (event)=>{
 console.log(event.target.value);
 this.reszta.two.quantity++;
-this.suma +=2;
+this.suma +=this.reszta.two.value;
 console.log(this.suma);
 });
 
 baton4.addEventListener('click', (event)=>{
 console.log(event.target.value);
 this.reszta.five.quantity++;
-this.suma +=5;
+this.suma +=this.reszta.five.value;
 console.log(this.suma);
 });
 
