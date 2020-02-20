@@ -62,21 +62,21 @@ const baton2 =  document.querySelector('.b2');
 const baton3 =  document.querySelector('.b3');
 const baton4 =  document.querySelector('.b4');
 
-baton1.addEventListener('click', function(){
-console.log("0,5");
+baton1.addEventListener('click', function(event){
+console.log(event.target.value);
 
 
 });
-baton2.addEventListener('click', function(){
-console.log("1");
+baton2.addEventListener('click', function(event){
+console.log(event.target.value);
 
 });
-baton3.addEventListener('click', function(){
-console.log("2");
+baton3.addEventListener('click', function(event){
+console.log(event.target.value);
 
 });
-baton4.addEventListener('click', function(){
-console.log("5");
+baton4.addEventListener('click', function(event){
+console.log(event.target.value);
 
 });
 
