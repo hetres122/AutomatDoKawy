@@ -4,7 +4,7 @@
 const automat = {
    pieniadze : 10,
    cena : 5,
-
+   suma : 0,
     reszta : {
         half: {
             value: 0.5,
@@ -60,23 +60,32 @@ const baton2 =  document.querySelector('.b2');
 const baton3 =  document.querySelector('.b3');
 const baton4 =  document.querySelector('.b4');
 
-baton1.addEventListener('click', function(event){
+baton1.addEventListener('click', (event)=>{
 console.log(event.target.value);
 this.reszta.half.quantity++;
-
-
+this.suma +=0.5;
+console.log(this.suma);
 });
-baton2.addEventListener('click', function(event){
-console.log(event.target.value);
 
+baton2.addEventListener('click', (event)=>{
+console.log(event.target.value);
+this.reszta.one.quantity++;
+this.suma +=1;
+console.log(this.suma);
 });
-baton3.addEventListener('click', function(event){
-console.log(event.target.value);
 
+baton3.addEventListener('click', (event)=>{
+console.log(event.target.value);
+this.reszta.two.quantity++;
+this.suma +=2;
+console.log(this.suma);
 });
-baton4.addEventListener('click', function(event){
-console.log(event.target.value);
 
+baton4.addEventListener('click', (event)=>{
+console.log(event.target.value);
+this.reszta.five.quantity++;
+this.suma +=5;
+console.log(this.suma);
 });
 
 
