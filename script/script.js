@@ -85,15 +85,16 @@ console.log(event.target.value);
     }
     
     info(){
-document.write("Ilość: ",this.cena,);
-
+        document.write(`Ilość: ${this.cena}`);
     }
 
+    init() {
+        wydawanie();
+        info();
+        dodwanie();
+    }
 }
 
 const automat = new Automat(5, 10);
-automat.wydawanie();
-automat.info();
-automat.dodwanie();
-
+automat.init();
 
