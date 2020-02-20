@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomatDoNatanka</title>
+</head>
+
+<body>
+    <script>
+        class Automat {
+            constructor(cena, pieniadze){
+                this.cena=cena;
+                this.pieniadze=pieniadze; 
+            }
+            
+            reszta = {
+            coins: [0.5, 1, 2, 5],
+            cash: [100, 100, 100, 100] 
+            
+        }
+               wydawanie() {
+                   this.pieniadze -=this.cena;
+             while (this.pieniadze !== 0) {
+                    if (this.pieniadze >= this.reszta.coins[3]) {
+                        this.pieniadze -= this.reszta.coins[3];
+                        this.reszta.cash[3]--;
+                        console.log("5");
+
+                    }
+                    if (this.pieniadze >= this.reszta.coins[2]) {
+                        this.pieniadze -= this.reszta.coins[2];
+                        this.reszta.cash[2]--;
+                        console.log("2");
+                    }
+                    if (this.pieniadze >= this.reszta.coins[1]) {
+                        this.pieniadze -= this.reszta.coins[1];
+                        this.reszta.cash[1]--;
+                        console.log("1");
+                    }
+                    if (this.pieniadze >= this.reszta.coins[0]) {
+                        this.pieniadze -= this.reszta.coins[0];
+                        this.reszta.cash[0]--;
+                        console.log("0.5");
+
+                    }
+
+                }
+                
+               }
+
+             }
+
+           
+       
+      const auto = new Automat(5,10);
+      auto.wydawanie();
+      
+
+      
+     
+    </script>
+
+</body>
+
+</html>
