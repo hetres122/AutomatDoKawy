@@ -1,13 +1,11 @@
 
 
 
-class Automat {
-    constructor(cena, pieniadze) {
-        this.cena = cena;
-        this.pieniadze = pieniadze;
-    }
-    
-    reszta = {
+const automat = {
+   pieniadze : 10,
+   cena : 5,
+
+    reszta : {
         half: {
             value: 0.5,
             quantity: 100
@@ -24,7 +22,7 @@ class Automat {
             value: 5,
             quantity: 100
         },
-    }
+    },
 
     wydawanie() {
         this.pieniadze -= this.cena;
@@ -54,7 +52,7 @@ class Automat {
 
         }
 
-    }
+    },
     dodwanie(){
 
 const baton1 =  document.querySelector('.b1');
@@ -64,6 +62,7 @@ const baton4 =  document.querySelector('.b4');
 
 baton1.addEventListener('click', function(event){
 console.log(event.target.value);
+this.reszta.half.quantity++;
 
 
 });
@@ -82,12 +81,12 @@ console.log(event.target.value);
 
 
 
-    }
+    },
     
     info(){
-document.write('Ilość: ${this.cena}');
-
-    }
+        document.write(`Ilość: ${this.cena}`);
+        
+    },
 init(){
     this.wydawanie();
     this.info();
@@ -95,7 +94,7 @@ init(){
 }
 }
 
-const automat = new Automat(5, 10);
+
 automat.init();
 
 
