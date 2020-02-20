@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,37 +15,49 @@
                 this.cena=cena;
                 this.pieniadze=pieniadze; 
             }
-        //test
-
-
-
-            reszta = {
-            coins: [0.5, 1, 2, 5],
-            cash: [100, 100, 100, 100] 
-
+            
+             reszta = {
+               half: {
+                 value: 0.5,
+                 quantity: 100
+               },
+               one: {
+                  value: 1,
+                 quantity: 100
+               },
+               two: {
+                  value: 2,
+                 quantity: 100
+               },
+               five: {
+                  value: 5,
+                 quantity: 100
+               },
+            // coins: [0.5, 1, 2, 5],
+            // cash: [100, 100, 100, 100] 
         }
                wydawanie() {
                    this.pieniadze -=this.cena;
              while (this.pieniadze !== 0) {
-                    if (this.pieniadze >= this.reszta.coins[3]) {
-                        this.pieniadze -= this.reszta.coins[3];
-                        this.reszta.cash[3]--;
+                    if (this.pieniadze >= this.reszta.five.value) {
+                        this.pieniadze -= this.reszta.five.value;
+                        this.reszta.five.quantity--;
                         console.log("5");
 
                     }
-                    if (this.pieniadze >= this.reszta.coins[2]) {
-                        this.pieniadze -= this.reszta.coins[2];
-                        this.reszta.cash[2]--;
+                    if (this.pieniadze >= this.reszta.two.value) {
+                        this.pieniadze -= this.reszta.two.value;
+                        this.reszta.two.quantity--;
                         console.log("2");
                     }
-                    if (this.pieniadze >= this.reszta.coins[1]) {
-                        this.pieniadze -= this.reszta.coins[1];
-                        this.reszta.cash[1]--;
+                    if (this.pieniadze >= this.reszta.one.value) {
+                        this.pieniadze -= this.reszta.one.value;
+                        this.reszta.one.quantity--;
                         console.log("1");
                     }
-                    if (this.pieniadze >= this.reszta.coins[0]) {
-                        this.pieniadze -= this.reszta.coins[0];
-                        this.reszta.cash[0]--;
+                    if (this.pieniadze >= this.reszta.half.value) {
+                        this.pieniadze -= this.reszta.half.value;
+                        this.reszta.half.quantity--;
                         console.log("0.5");
 
                     }
@@ -57,8 +70,8 @@
 
            
        
-      const auto = new Automat(5,10);
-      auto.wydawanie();
+      const automat = new Automat(5,10);
+      automat.wydawanie();
       
 
       
