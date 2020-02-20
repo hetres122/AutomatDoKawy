@@ -1,9 +1,12 @@
 
+
+
 class Automat {
     constructor(cena, pieniadze) {
         this.cena = cena;
         this.pieniadze = pieniadze;
     }
+    
     reszta = {
         half: {
             value: 0.5,
@@ -52,9 +55,45 @@ class Automat {
         }
 
     }
+    dodwanie(){
+
+const baton1 =  document.querySelector('.b1');
+const baton2 =  document.querySelector('.b2');
+const baton3 =  document.querySelector('.b3');
+const baton4 =  document.querySelector('.b4');
+
+baton1.addEventListener('click', function(){
+console.log("0,5");
+
+
+});
+baton2.addEventListener('click', function(){
+console.log("1");
+
+});
+baton3.addEventListener('click', function(){
+console.log("2");
+
+});
+baton4.addEventListener('click', function(){
+console.log("5");
+
+});
+
+
+
+    }
+    
+    info(){
+document.write("Ilość: ",this.cena,);
+
+    }
 
 }
 
 const automat = new Automat(5, 10);
 automat.wydawanie();
+automat.info();
+automat.dodwanie();
+
 
