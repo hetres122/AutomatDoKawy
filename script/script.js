@@ -2,10 +2,10 @@
 
 
 const automat = {
-   pieniadze : 10,
-   cena : 5,
-   suma : 0,
-    reszta : {
+    pieniadze: 10,
+    cena: 5,
+    suma: 0,
+    reszta: {
         half: {
             value: 0.5,
             quantity: 100
@@ -20,6 +20,34 @@ const automat = {
         },
         five: {
             value: 5,
+            quantity: 100
+        },
+    },
+    products: {
+        BlackCoffee: {
+            value: 2.5,
+            quantity: 100
+        },
+        chocolate: {
+            value: 3,
+            quantity: 100
+        },
+        tea: {
+            value: 1.5,
+            quantity: 100
+
+        },
+        Espresso: {
+            value: 1.5,
+            quantity: 100
+
+        },
+        CoffeeWithMilk: {
+            value: 3,
+            quantity: 100
+        },
+        cappuccino: {
+            value: 2,
             quantity: 100
         },
     },
@@ -53,60 +81,61 @@ const automat = {
         }
 
     },
-    dodwanie(){
+    dodwanie() {
 
-const baton1 =  document.querySelector('.b1');
-const baton2 =  document.querySelector('.b2');
-const baton3 =  document.querySelector('.b3');
-const baton4 =  document.querySelector('.b4');
+        const baton1 = document.querySelector('.b1');
+        const baton2 = document.querySelector('.b2');
+        const baton3 = document.querySelector('.b3');
+        const baton4 = document.querySelector('.b4');
 
-baton1.addEventListener('click', (event)=>{
-console.log(event.target.value);
-this.reszta.half.quantity++;
-this.suma +=this.reszta.half.value;
-console.log(this.suma);
+        baton1.addEventListener('click', (event) => {
+            console.log(event.target.value);
+            this.reszta.half.quantity++;
+            this.suma += this.reszta.half.value;
+            console.log(this.suma);
 
 
-});
+        });
 
-baton2.addEventListener('click', (event)=>{
-console.log(event.target.value);
-this.reszta.one.quantity++;
-this.suma +=this.reszta.one.value;
-console.log(this.suma);
-//document.write(this.suma);
-//Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
-});
+        baton2.addEventListener('click', (event) => {
+            console.log(event.target.value);
+            this.reszta.one.quantity++;
+            this.suma += this.reszta.one.value;
+            console.log(this.suma);
+            //document.write(this.suma);
+            //Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
+        });
 
-baton3.addEventListener('click', (event)=>{
-console.log(event.target.value);
-this.reszta.two.quantity++;
-this.suma +=this.reszta.two.value;
-console.log(this.suma);
+        baton3.addEventListener('click', (event) => {
+            console.log(event.target.value);
+            this.reszta.two.quantity++;
+            this.suma += this.reszta.two.value;
+            console.log(this.suma);
 
-});
+        });
 
-baton4.addEventListener('click', (event)=>{
-console.log(event.target.value);
-this.reszta.five.quantity++;
-this.suma +=this.reszta.five.value;
-console.log(this.suma);
-});
+        baton4.addEventListener('click', (event) => {
+            console.log(event.target.value);
+            this.reszta.five.quantity++;
+            this.suma += this.reszta.five.value;
+            console.log(this.suma);
+        });
+
 
 
 
     },
-    
-    info(){
+
+    info() {
         document.write(`Ilość: ${this.cena}`);
         document.write(`Pieniadze: ${this.suma}`);
-        
+
     },
-init(){
-    this.wydawanie();
-    this.info();
-    this.dodwanie();
-}
+    init() {
+        this.wydawanie();
+        this.info();
+        this.dodwanie();
+    }
 }
 
 
