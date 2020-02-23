@@ -2,7 +2,7 @@
 
 
 const automat = {
-   pieniadze : 15,
+   pieniadze : 10,
    cena : 5,
    suma : 0,
     reszta : {
@@ -74,7 +74,8 @@ console.log(event.target.value);
 this.reszta.one.quantity++;
 this.suma +=this.reszta.one.value;
 console.log(this.suma);
-
+//document.write(this.suma);
+//Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
 });
 
 baton3.addEventListener('click', (event)=>{
