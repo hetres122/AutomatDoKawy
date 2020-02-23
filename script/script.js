@@ -2,7 +2,7 @@
 
 
 const automat = {
-   pieniadze : 10,
+   pieniadze : 15,
    cena : 5,
    suma : 0,
     reszta : {
@@ -65,6 +65,8 @@ console.log(event.target.value);
 this.reszta.half.quantity++;
 this.suma +=this.reszta.half.value;
 console.log(this.suma);
+
+
 });
 
 baton2.addEventListener('click', (event)=>{
@@ -72,6 +74,7 @@ console.log(event.target.value);
 this.reszta.one.quantity++;
 this.suma +=this.reszta.one.value;
 console.log(this.suma);
+
 });
 
 baton3.addEventListener('click', (event)=>{
@@ -79,6 +82,7 @@ console.log(event.target.value);
 this.reszta.two.quantity++;
 this.suma +=this.reszta.two.value;
 console.log(this.suma);
+
 });
 
 baton4.addEventListener('click', (event)=>{
@@ -94,6 +98,7 @@ console.log(this.suma);
     
     info(){
         document.write(`Ilość: ${this.cena}`);
+        document.write(`Pieniadze: ${this.suma}`);
         
     },
 init(){
