@@ -102,7 +102,8 @@ const automat = {
             this.reszta.one.quantity++;
             this.suma += this.reszta.one.value;
             console.log(this.suma);
-            //document.write(this.suma);
+            
+            //document.write(`${this.suma}`);
             //Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
         });
 
