@@ -177,5 +177,3 @@ this.wydawanie();
 
 
 automat.init();
-
-
