@@ -98,11 +98,12 @@ const automat = {
         });
 
         baton2.addEventListener('click', (event) => {
+            const showVar = document.querySelector('.showVar');
             console.log(event.target.value);
             this.reszta.one.quantity++;
             this.suma += this.reszta.one.value;
             console.log(this.suma);
-            //document.write(this.suma);
+            showVar.innerText = this.suma;
             //Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
         });
 
