@@ -1,11 +1,8 @@
-
-
-
 const automat = {
-    pieniadze: 10,
-    cena: 5,
-    suma: 0,
-    reszta: {
+    
+    price: 0,
+    sum: 0,
+    rest: {
         half: {
             value: 0.5,
             quantity: 100
@@ -24,7 +21,7 @@ const automat = {
         },
     },
     products: {
-        BlackCoffee: {
+        blackCoffee: {
             value: 2.5,
             quantity: 100
         },
@@ -35,14 +32,13 @@ const automat = {
         tea: {
             value: 1.5,
             quantity: 100
-
         },
-        Espresso: {
+        espresso: {
             value: 1.5,
             quantity: 100
 
         },
-        CoffeeWithMilk: {
+        coffeeWithMilk: {
             value: 3,
             quantity: 100
         },
@@ -51,39 +47,51 @@ const automat = {
             quantity: 100
         },
     },
+    select() {
 
-    wydawanie() {
-        this.pieniadze -= this.cena;
-        while (this.pieniadze !== 0) {
-            if (this.pieniadze >= this.reszta.five.value) {
-                this.pieniadze -= this.reszta.five.value;
-                this.reszta.five.quantity--;
-                console.log("5");
-               
+        const product1 = document.querySelector('.p1');
+        const product2 = document.querySelector('.p2');
+        const product3 = document.querySelector('.p3');
+        const product4 = document.querySelector('.p4');
+        const product5 = document.querySelector('.p5');
+        const product6 = document.querySelector('.p6');
 
-            }
-            if (this.pieniadze >= this.reszta.two.value) {
-                this.pieniadze -= this.reszta.two.value;
-                this.reszta.two.quantity--;
-                console.log("2");
-                
-            }
-            if (this.pieniadze >= this.reszta.one.value) {
-                this.pieniadze -= this.reszta.one.value;
-                this.reszta.one.quantity--;
-                console.log("1");
-            }
-            if (this.pieniadze >= this.reszta.half.value) {
-                this.pieniadze -= this.reszta.half.value;
-                this.reszta.half.quantity--;
-                console.log("0.5");
-                
+        product1.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.blackCoffee.value;
+            showPrice.innerText = this.price;
 
-            }
+        });
+        product2.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.chocolate.value;
+            showPrice.innerText = this.price;
+        });
+        product3.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.tea.value;
+            showPrice.innerText = this.price;
+        });
+        product4.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.espresso.value;
+            showPrice.innerText = this.price;
+        });
+        product5.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.coffeeWithMilk.value;
+            showPrice.innerText = this.price;
+        });
+        product6.addEventListener('click', (event) => {
+            const showPrice = document.querySelector('.showPrice');
+            this.price += this.products.cappuccino.value;
+            showPrice.innerText = this.price;
+        });
 
-        }
 
     },
+
+
     dodwanie() {
 
         const baton1 = document.querySelector('.b1');
@@ -93,49 +101,76 @@ const automat = {
 
         baton1.addEventListener('click', (event) => {
             const showVar = document.querySelector('.showVar');
-            console.log(event.target.value);
-            this.reszta.half.quantity++;
-            this.suma += this.reszta.half.value;
-            showVar.innerText = this.suma;
+            this.rest.half.quantity++;
+            this.sum += this.rest.half.value;
+            showVar.innerText = this.sum;
         });
 
         baton2.addEventListener('click', (event) => {
             const showVar = document.querySelector('.showVar');
-            console.log(event.target.value);
-            this.reszta.one.quantity++;
-            this.suma += this.reszta.one.value;
-            showVar.innerText = this.suma;
+            this.rest.one.quantity++;
+            this.sum += this.rest.one.value;
+            showVar.innerText = this.sum;
         });
 
         baton3.addEventListener('click', (event) => {
             const showVar = document.querySelector('.showVar');
-            console.log(event.target.value);
-            this.reszta.two.quantity++;
-            this.suma += this.reszta.two.value;
-            showVar.innerText = this.suma;
+            this.rest.two.quantity++;
+            this.sum += this.rest.two.value;
+            showVar.innerText = this.sum;
         });
 
         baton4.addEventListener('click', (event) => {
             const showVar = document.querySelector('.showVar');
-            console.log(event.target.value);
-            this.reszta.five.quantity++;
-            this.suma += this.reszta.five.value;
-            showVar.innerText = this.suma;
+            this.rest.five.quantity++;
+            this.sum += this.rest.five.value;
+            showVar.innerText = this.sum;
+        });
+    },
+    payy(){
+const pay = document.querySelector('.z1')
+        pay.addEventListener('click', (event) =>{
+this.wydawanie();
+
+
+
         });
 
-
-
-
     },
 
-    info() {
-        document.write(`Ilość: ${this.cena}`);
+    wydawanie() {
         
+        this.sum -= this.price;
+        while (this.sum !== 0) {
+            if (this.sum >= this.rest.five.value) {
+                this.sum -= this.rest.five.value;
+                this.rest.five.quantity--;
+                console.log("5");
 
+            }
+            if (this.sum >= this.rest.two.value) {
+                this.sum -= this.rest.two.value;
+                this.rest.two.quantity--;
+                console.log("2");
+
+            }
+            if (this.sum >= this.rest.one.value) {
+                this.sum -= this.rest.one.value;
+                this.rest.one.quantity--;
+                console.log("1");
+            }
+            if (this.sum >= this.rest.half.value) {
+                this.sum -= this.rest.half.value;
+                this.rest.half.quantity--;
+                console.log("0.5");
+            }
+        }
     },
+
     init() {
-        this.wydawanie();
-        this.info();
+        this.payy()
+        this.select();
+        
         this.dodwanie();
     }
 }
