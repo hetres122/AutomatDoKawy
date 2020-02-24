@@ -59,12 +59,14 @@ const automat = {
                 this.pieniadze -= this.reszta.five.value;
                 this.reszta.five.quantity--;
                 console.log("5");
+               
 
             }
             if (this.pieniadze >= this.reszta.two.value) {
                 this.pieniadze -= this.reszta.two.value;
                 this.reszta.two.quantity--;
                 console.log("2");
+                
             }
             if (this.pieniadze >= this.reszta.one.value) {
                 this.pieniadze -= this.reszta.one.value;
@@ -75,6 +77,7 @@ const automat = {
                 this.pieniadze -= this.reszta.half.value;
                 this.reszta.half.quantity--;
                 console.log("0.5");
+                
 
             }
 
@@ -89,36 +92,35 @@ const automat = {
         const baton4 = document.querySelector('.b4');
 
         baton1.addEventListener('click', (event) => {
+            const showVar = document.querySelector('.showVar');
             console.log(event.target.value);
             this.reszta.half.quantity++;
             this.suma += this.reszta.half.value;
-            console.log(this.suma);
-
-
+            showVar.innerText = this.suma;
         });
 
         baton2.addEventListener('click', (event) => {
+            const showVar = document.querySelector('.showVar');
             console.log(event.target.value);
             this.reszta.one.quantity++;
             this.suma += this.reszta.one.value;
-            console.log(this.suma);
-            //document.write(this.suma);
-            //Jak to dodać na stronie żeby po kliknieciu się odświeżyła a nie na osobna stronę przerzuca 
+            showVar.innerText = this.suma;
         });
 
         baton3.addEventListener('click', (event) => {
+            const showVar = document.querySelector('.showVar');
             console.log(event.target.value);
             this.reszta.two.quantity++;
             this.suma += this.reszta.two.value;
-            console.log(this.suma);
-
+            showVar.innerText = this.suma;
         });
 
         baton4.addEventListener('click', (event) => {
+            const showVar = document.querySelector('.showVar');
             console.log(event.target.value);
             this.reszta.five.quantity++;
             this.suma += this.reszta.five.value;
-            console.log(this.suma);
+            showVar.innerText = this.suma;
         });
 
 
@@ -128,7 +130,7 @@ const automat = {
 
     info() {
         document.write(`Ilość: ${this.cena}`);
-        document.write(`Pieniadze: ${this.suma}`);
+        
 
     },
     init() {
