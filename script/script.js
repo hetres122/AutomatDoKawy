@@ -1,7 +1,9 @@
 const automat = {
-    
+
     price: 0,
     sum: 0,
+    showVar: 0,
+    showPrice: 0,
     rest: {
         half: {
             value: 0.5,
@@ -57,33 +59,33 @@ const automat = {
         const product6 = document.querySelector('.p6');
 
         product1.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.blackCoffee.value;
             showPrice.innerText = this.price;
 
         });
         product2.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.chocolate.value;
             showPrice.innerText = this.price;
         });
         product3.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.tea.value;
             showPrice.innerText = this.price;
         });
         product4.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.espresso.value;
             showPrice.innerText = this.price;
         });
         product5.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.coffeeWithMilk.value;
             showPrice.innerText = this.price;
         });
         product6.addEventListener('click', (event) => {
-            const showPrice = document.querySelector('.showPrice');
+            showPrice = document.querySelector('.showPrice');
             this.price += this.products.cappuccino.value;
             showPrice.innerText = this.price;
         });
@@ -100,77 +102,83 @@ const automat = {
         const baton4 = document.querySelector('.b4');
 
         baton1.addEventListener('click', (event) => {
-            const showVar = document.querySelector('.showVar');
+            showVar = document.querySelector('.showVar');
             this.rest.half.quantity++;
             this.sum += this.rest.half.value;
             showVar.innerText = this.sum;
         });
 
         baton2.addEventListener('click', (event) => {
-            const showVar = document.querySelector('.showVar');
+            showVar = document.querySelector('.showVar');
             this.rest.one.quantity++;
             this.sum += this.rest.one.value;
             showVar.innerText = this.sum;
         });
 
         baton3.addEventListener('click', (event) => {
-            const showVar = document.querySelector('.showVar');
+            showVar = document.querySelector('.showVar');
             this.rest.two.quantity++;
             this.sum += this.rest.two.value;
             showVar.innerText = this.sum;
         });
 
         baton4.addEventListener('click', (event) => {
-            const showVar = document.querySelector('.showVar');
+            showVar = document.querySelector('.showVar');
             this.rest.five.quantity++;
             this.sum += this.rest.five.value;
             showVar.innerText = this.sum;
         });
     },
-    payy(){
-const pay = document.querySelector('.z1')
-        pay.addEventListener('click', (event) =>{
-this.wydawanie();
+    payy() {
+        const pay = document.querySelector('.z1')
+        pay.addEventListener('click', (event) => {
+            this.wydawanie();
 
-
-
+            showPrice.innerText = 0;
+            showVar.innerText = 0;
         });
 
     },
 
     wydawanie() {
-        
-        this.sum -= this.price;
-        while (this.sum !== 0) {
-            if (this.sum >= this.rest.five.value) {
-                this.sum -= this.rest.five.value;
-                this.rest.five.quantity--;
-                console.log("5");
+        if (this.sum >= this.price) {
+            this.sum -= this.price;
+            while (this.sum !== 0) {
+                if (this.sum >= this.rest.five.value) {
+                    this.sum -= this.rest.five.value;
+                    this.rest.five.quantity--;
+                    console.log("5");
 
-            }
-            if (this.sum >= this.rest.two.value) {
-                this.sum -= this.rest.two.value;
-                this.rest.two.quantity--;
-                console.log("2");
+                }
+                if (this.sum >= this.rest.two.value) {
+                    this.sum -= this.rest.two.value;
+                    this.rest.two.quantity--;
+                    console.log("2");
 
+                }
+                if (this.sum >= this.rest.one.value) {
+                    this.sum -= this.rest.one.value;
+                    this.rest.one.quantity--;
+                    console.log("1");
+                }
+                if (this.sum >= this.rest.half.value) {
+                    this.sum -= this.rest.half.value;
+                    this.rest.half.quantity--;
+                    console.log("0.5");
+                }
             }
-            if (this.sum >= this.rest.one.value) {
-                this.sum -= this.rest.one.value;
-                this.rest.one.quantity--;
-                console.log("1");
-            }
-            if (this.sum >= this.rest.half.value) {
-                this.sum -= this.rest.half.value;
-                this.rest.half.quantity--;
-                console.log("0.5");
-            }
+
+        } else {
+            console.log("1");
         }
+
+
     },
 
     init() {
         this.payy()
         this.select();
-        
+
         this.dodwanie();
     }
 }
