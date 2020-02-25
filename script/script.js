@@ -4,6 +4,7 @@ const automat = {
     sum: 0,
     showVar: 0,
     showPrice: 0,
+    information: "",
     rest: {
         half: {
             value: 0.5,
@@ -89,10 +90,7 @@ const automat = {
             this.price += this.products.cappuccino.value;
             showPrice.innerText = this.price;
         });
-
-
     },
-
 
     dodwanie() {
 
@@ -133,11 +131,13 @@ const automat = {
         const pay = document.querySelector('.z1')
         pay.addEventListener('click', (event) => {
             this.wydawanie();
-
+            showPrice = document.querySelector('.showPrice');
+            showVar = document.querySelector('.showVar');
             showPrice.innerText = 0;
             showVar.innerText = 0;
-        });
+            this.price = 0;
 
+        });
     },
 
     wydawanie() {
@@ -148,7 +148,33 @@ const automat = {
                     this.sum -= this.rest.five.value;
                     this.rest.five.quantity--;
                     console.log("5");
+                }
+                if (this.sum >= this.rest.two.value) {
+                    this.sum -= this.rest.two.value;
+                    this.rest.two.quantity--;
+                    console.log("2");
+                }
+                if (this.sum >= this.rest.one.value) {
+                    this.sum -= this.rest.one.value;
+                    this.rest.one.quantity--;
+                    console.log("1");
+                }
+                if (this.sum >= this.rest.half.value) {
+                    this.sum -= this.rest.half.value;
+                    this.rest.half.quantity--;
+                    console.log("0.5");
+                }
+            }
 
+        } else {
+            information = document.querySelector('.information');
+            information.innerText = "Nie wystarczająco pieniędzy";
+
+            while (this.sum !== 0) {
+                if (this.sum >= this.rest.five.value) {
+                    this.sum -= this.rest.five.value;
+                    this.rest.five.quantity--;
+                    console.log("5");
                 }
                 if (this.sum >= this.rest.two.value) {
                     this.sum -= this.rest.two.value;
@@ -167,12 +193,7 @@ const automat = {
                     console.log("0.5");
                 }
             }
-
-        } else {
-            console.log("1");
         }
-
-
     },
 
     init() {
@@ -182,6 +203,5 @@ const automat = {
         this.dodwanie();
     }
 }
-
 
 automat.init();
