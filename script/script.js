@@ -4,7 +4,7 @@ const automat = {
     sum: 0,
     showVar: 0,
     showPrice: 0,
-    information: "",
+    showRest: 0,
     rest: {
         half: {
             value: 0.5,
@@ -147,50 +147,60 @@ const automat = {
                 if (this.sum >= this.rest.five.value) {
                     this.sum -= this.rest.five.value;
                     this.rest.five.quantity--;
-                    console.log("5");
+                    showRest = document.querySelector('.showRest0');
+                    showRest.innerText++;
+
                 }
                 if (this.sum >= this.rest.two.value) {
                     this.sum -= this.rest.two.value;
                     this.rest.two.quantity--;
-                    console.log("2");
+                    showRest = document.querySelector('.showRest1');
+                    showRest.innerText++;
+
                 }
                 if (this.sum >= this.rest.one.value) {
                     this.sum -= this.rest.one.value;
                     this.rest.one.quantity--;
-                    console.log("1");
+                    showRest = document.querySelector('.showRest2');
+                    showRest.innerText++;
+
                 }
                 if (this.sum >= this.rest.half.value) {
                     this.sum -= this.rest.half.value;
                     this.rest.half.quantity--;
-                    console.log("0.5");
+                    showRest = document.querySelector('.showRest3');
+                    showRest.innerText++;
+
                 }
             }
 
         } else {
-            information = document.querySelector('.information');
-            information.innerText = "Nie wystarczająco pieniędzy";
+
 
             while (this.sum !== 0) {
                 if (this.sum >= this.rest.five.value) {
                     this.sum -= this.rest.five.value;
                     this.rest.five.quantity--;
-                    console.log("5");
+                    showRest = document.querySelector('.showRest0');
+                    showRest.innerText++;
                 }
                 if (this.sum >= this.rest.two.value) {
                     this.sum -= this.rest.two.value;
                     this.rest.two.quantity--;
-                    console.log("2");
-
+                    showRest = document.querySelector('.showRest1');
+                    showRest.innerText++;
                 }
                 if (this.sum >= this.rest.one.value) {
                     this.sum -= this.rest.one.value;
                     this.rest.one.quantity--;
-                    console.log("1");
+                    showRest = document.querySelector('.showRest2');
+                    showRest.innerText++;
                 }
                 if (this.sum >= this.rest.half.value) {
                     this.sum -= this.rest.half.value;
                     this.rest.half.quantity--;
-                    console.log("0.5");
+                    showRest = document.querySelector('.showRest3');
+                    showRest.innerText++;
                 }
             }
         }
