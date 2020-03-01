@@ -5,10 +5,11 @@ const automat = {
     showVar: 0,
     showPrice: 0,
     showRest: 0,
+    batonReset: 0,
     rest: {
         half: {
             value: 0.5,
-            quantity: 100
+            quantity: 0
         },
         one: {
             value: 1,
@@ -128,7 +129,8 @@ const automat = {
         });
     },
     payy() {
-        const pay = document.querySelector('.z1')
+        const pay = document.querySelector('.z1');
+
         pay.addEventListener('click', (event) => {
             this.wydawanie();
             showPrice = document.querySelector('.showPrice');
@@ -137,10 +139,13 @@ const automat = {
             showVar.innerText = 0;
             this.price = 0;
 
+
+
         });
     },
 
     wydawanie() {
+
         if (this.sum >= this.price) {
             this.sum -= this.price;
             while (this.sum !== 0) {
@@ -149,6 +154,7 @@ const automat = {
                     this.rest.five.quantity--;
                     showRest = document.querySelector('.showRest0');
                     showRest.innerText++;
+
 
                 }
                 if (this.sum >= this.rest.two.value) {
@@ -205,11 +211,25 @@ const automat = {
             }
         }
     },
+    take() {
+        batonReset = document.querySelector('.reset');
+        batonReset.addEventListener('click', (event) => {
+            showRest = document.querySelector('.showRest0');
+            showRest.innerText = 0;
+            showRest = document.querySelector('.showRest1');
+            showRest.innerText = 0;
+            showRest = document.querySelector('.showRest2');
+            showRest.innerText = 0;
+            showRest = document.querySelector('.showRest3');
+            showRest.innerText = 0;
+        });
+
+    },
 
     init() {
         this.payy()
         this.select();
-
+        this.take();
         this.dodwanie();
     }
 }
